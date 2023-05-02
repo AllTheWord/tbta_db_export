@@ -1,0 +1,1029 @@
+# TBTA DB Export to JSON or XML
+
+```elixir
+Mix.install([
+  {:jason, "~> 1.4"},
+  {:explorer, "~> 0.5.6"},
+  {:kino, "~> 0.9.2"},
+  {:nimble_parsec, "~> 1.3"},
+  {:xml_builder, "~> 2.2"}
+])
+```
+
+## Section
+
+### Run this so the aliases below will work
+
+```elixir
+require Explorer.DataFrame, as: DF
+require Explorer.Query, as: Q
+```
+
+### Run this to tell the script where to find stuff - adjust the first one to the actual value
+
+```elixir
+defmodule Locations do
+  # Adjust this first value to wherever your project base is - use absolute path
+  def project_base, do: "/wherever/you/want"
+  def csv, do: project_base() <> "csv/"
+  def bible, do: project_base() <> "csv/Bible/"
+  def grammar, do: project_base() <> "csv/Grammar/"
+  def json, do: project_base() <> "json/"
+  def xml, do: project_base() <> "xml/"
+
+  def make_dirs do
+    for dir <- [&project_base/0, &csv/0, &bible/0, &grammar/0, &json/0, &xml/0] do
+      # Make this directory if it doesn't already exist
+      # Remove it entirely if you want a clean start
+      :ok =
+        case File.mkdir("#{dir.()}") do
+          :ok ->
+            :ok
+
+          {:error, :eexist} ->
+            # It already exists so just use it
+            :ok
+
+          {:error, error} ->
+            # Probably a permissions issue or something
+            IO.puts("File system says nope: #{inspect(error)}")
+            throw(error)
+        end
+    end
+  end
+end
+```
+
+### Run this to put the directories in place
+
+```elixir
+Locations.make_dirs()
+```
+
+This requires [`mdbtools`](https://github.com/mdbtools/mdbtools) to be installed and available on your system. It should work for Linux or Mac. If you're on Windows, you're on your own. ;)
+
+mbttools just parses the Access DB as a CSV (for our purposes).
+
+This requires two Access DB files: `Bible.mdb` and `Sample.mdb`.
+
+`Bible.mdb` has all the verses with semantic values embedded.
+
+`Sample.mdb` has the values to interpret the semantic values. This can be different for different grammars. This one is the default English mapping.
+
+Download these two and put them in your project base unless you want to adjust the script.
+
+<!-- livebook:{"break_markdown":true} -->
+
+### This section extracts the `Bible.mdb` into individual `CSV`s per book of the Bible
+
+```elixir
+# Get all the table names
+{table_names_str, _} = System.cmd("mdb-tables", ["#{Locations.project_base()}Bible.mdb"])
+
+table_names_str
+|> String.split()
+|> Enum.each(fn table_name ->
+  # Export the tables into a temp dir - they can be deleted later if you don't want them
+  {book_csv_str, _} =
+    System.cmd("mdb-export", ["#{Locations.project_base()}Bible.mdb", table_name])
+
+  File.write!("#{Locations.bible()}#{table_name}.csv", book_csv_str)
+end)
+```
+
+```elixir
+Locations.grammar()
+```
+
+### Run this to extract the grammar for later
+
+```elixir
+# Make this directory if it doesn't already exist
+# Remove it entirely if you want a clean start
+:ok =
+  case File.mkdir("#{Locations.grammar()}") do
+    :ok ->
+      :ok
+
+    {:error, :eexist} ->
+      # It alreads exists so just use it
+      :ok
+
+    {:error, error} ->
+      # Probably a permissions issue or something
+      IO.puts("File system says nope: #{inspect(error)}")
+      throw(error)
+  end
+
+# This DB has other tables but this is the only one we care about for this exercise
+table_name = "Features_Source"
+
+# Export the table into a temp dir - they can be deleted later if you don't want them
+{book_csv_str, _} =
+  System.cmd("mdb-export", ["#{Locations.project_base()}Sample.mdb", table_name])
+
+File.write!("#{Locations.grammar()}#{table_name}.csv", book_csv_str)
+```
+
+### Optional - perhaps useful if you want to see the grammar rules
+
+```elixir
+# To understand how to use DataFrames, etc, check out 
+# https://hexdocs.pm/explorer/Explorer.html
+
+df = DF.from_csv!("#{Locations.grammar()}Features_Source.csv")
+
+# {SyntacticCategoryID, SyntacticCategory}
+# {1, :Noun},
+# {2, :Verb},
+# {3, :Adjective},
+# {4, :Adverb},
+# {5, :Adposition},
+# {6, :Conjunction},
+# {7, :Phrasal},
+# {8, :Particle},
+# {101, :NP},
+# {102, :VP},
+# {103, :AdjP},
+# {104, :AdvP},
+# {105, :Clause},
+# {110, :Paragraph},
+# {120, :Episode},
+
+filtered =
+  DF.filter(df, col("SyntacticCategory") == 1)
+  |> DF.arrange(col("ID"))
+  |> DF.select(["ID", "FeatureName", "FeatureValues"])
+
+DF.table(filtered, limit: :infinity)
+```
+
+### Run this - `Parse` takes the string of one verse and outputs a list of tokens to be consumed in the next step in  the `Reshape` module
+
+```elixir
+defmodule Parse do
+  @moduledoc """
+  Takes a verse in the TBTA DB format and parses it into digestible parts for reshaping
+
+  Original format:
+  Ruth 3:17
+  ~\wd ~\tg c-IDp00NNNNNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK3NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1ArUINAN...........~\lu say~\wd ~\tg ~\lu )~\wd ~\tg c-PDpAVnCYNNNNNNNNN..............~\lu [~\wd ~\tg r-1A.....~\lu -QuoteBegin~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Boaz~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AAUINAN...........~\lu give~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg N-1A3PGAnK3NN........~\lu grain/Bbarley~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Quantity~\wd ~\tg j-SA.....~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu about~\wd ~\tg ~\lu )~\wd ~\tg A-1AN.....~\lu 23~\wd ~\tg ~\lu )~\wd ~\tg N-1A4PGAnK3NN........~\lu kilogram~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A1SDAnK1NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpAVnCYNNNNNNNNN..............~\lu {~\wd ~\tg C-1A.....~\lu and~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Boaz~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1ArUINAN...........~\lu say~\wd ~\tg ~\lu )~\wd ~\tg c-PIpTenDONNNNNNNNNN.............~\lu [~\wd ~\tg r-1A.....~\lu -QuoteBegin1~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu take~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg N-1A5SDANK3NN........~\lu gift~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A6SFAnK3NN........~\lu mother-in-law~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Kinship~\wd ~\tg N-1A1SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg r-1A.....~\lu -QuoteEnd1~\wd ~\tg r-1A.....~\lu -QuoteEnd~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~|ARuth|ABoaz|Agrain|Akilogram|Agift|Amother-in-law|||||||||||||||||||||||||||||| 
+
+  Opens each element:
+  ~\wd ~\tg
+  Closes each element:
+  ~\lu
+
+  Constituent falls between elements
+  ~\lu word~\wd
+
+  Parsing wrapped spaces and periods as meaningful although I don't know if they analyzed_verses
+
+  Space
+  ~\wd ~\tg ~\lu
+
+  Period
+  ~\wd ~\tg .-~\lu .~\wd
+
+  Marking the opening and closing of clauses and subclauses to process in the next step
+  "{" -> {:begin_clause, ["{"]}
+  "}" -> {:end_clause, ["}"]}
+  "[" -> {:begin_subclause, ["["]}
+  "]" -> {:end_subclause, ["]"]}
+  "(" -> {:begin_phrase, ["("]}
+  ")" -> {:end_phrase, [")"]}
+
+  These are all the semantic attributes of the clause, phrase or constiuent - they are dealt with at the next stage
+  c-IDp00NNNNNNNNNNNN..............
+
+  The whole verse is parsed and leaves as a flat list
+  The next module reshapes it into a structured format
+  """
+
+  import NimbleParsec
+
+  @spaces [?\s, ?\n, ?\r, ?\t]
+
+  element =
+    ignore(string("~\\wd ~\\tg"))
+    |> ignore(repeat(ascii_char(@spaces)))
+    |> ascii_string([?a..?z, ?A..?Z, ?-, ?., ?0..?9, ?!], min: 1, max: 40)
+    |> ignore(string("~\\lu"))
+    |> tag(:element)
+
+  constituent =
+    ascii_string([?a..?z, ?A..?Z, ?-, ?., ?,, ?0..?9, ?\s, ?/, ?`, ?|, ?)], min: 1, max: 100)
+    |> lookahead(string("~"))
+    |> tag(:constituent)
+
+  space =
+    ignore(string("~\\wd ~\\tg"))
+    |> ignore(repeat(ascii_char(@spaces)))
+    |> ignore(string("~\\lu"))
+    |> replace(" ")
+    |> tag(:space)
+
+  begin_clause = string("{") |> tag(:begin_clause)
+  end_clause = string("}") |> tag(:end_clause)
+
+  begin_subclause = string("[") |> tag(:begin_subclause)
+  end_subclause = string("]") |> tag(:end_subclause)
+
+  begin_phrase = string("(") |> tag(:begin_phrase)
+  end_phrase = string(")") |> tag(:end_phrase)
+
+  eat_space = @spaces |> ascii_char() |> ignore()
+
+  done =
+    ascii_string([?~], 1)
+    |> ascii_string([?|], 1)
+    |> ascii_string([?A..?Z, ?|], 1)
+    |> replace("yay")
+    |> tag(:done)
+
+  elements =
+    [
+      eat_space,
+      begin_clause,
+      end_clause,
+      begin_subclause,
+      end_subclause,
+      begin_phrase,
+      end_phrase,
+      element,
+      constituent,
+      space,
+      done
+    ]
+    |> choice()
+    |> repeat()
+
+  defparsec(:verse, elements, debug: true)
+end
+```
+
+### Run this - This module maps the grammar to the semantic embedded values
+
+```elixir
+defmodule Category do
+  @category_mapping %{
+    N: {1, :Noun},
+    V: {2, :Verb},
+    A: {3, :Adjective},
+    a: {4, :Adverb},
+    P: {5, :Adposition},
+    C: {6, :Conjunction},
+    p: {7, :Phrasal},
+    r: {8, :Particle},
+    n: {101, :NP},
+    v: {102, :VP},
+    j: {103, :AdjP},
+    d: {104, :AdvP},
+    c: {105, :Clause},
+    R: {110, :Paragraph},
+    E: {120, :Episode},
+    .: {0, :Period}
+  }
+
+  # This processes one syntactic category one verse at a time
+  # Take this a series of these
+  #
+  # FeatureName : Aspect
+  # FeatureValues: Inceptive/N|Completive/C|Cessative/c|Continuative/o|Imperfective/I|Routinely/R|Habitual/H|Gnomic/G|Unmarked/U| 
+  #
+  # - and turn it into a map
+  # 
+  # By using the `@` - (module attributes) it only runs at compile time not every time it's called
+  @mapped Enum.map(
+            @category_mapping,
+            fn {abbr_cat, {cat_id, _cat_name}} ->
+              # The CSV is already processed and sitting available
+              df = DF.from_csv!("#{Locations.grammar()}Features_Source.csv")
+
+              # Take only the relevant SyntacticCategory
+              filtered =
+                DF.filter(df, col("SyntacticCategory") == ^cat_id)
+                # Sort by ID so they end up in the right order - this is _very important_
+                |> DF.arrange(col("ID"))
+                # Only take the rows we care about
+                |> DF.select(["FeatureName", "FeatureValues"])
+                |> DF.to_rows(atom_keys: true)
+
+              processed_features =
+                filtered
+                |> Enum.reduce([], fn
+                  %{
+                    FeatureName: "Spare" <> _
+                  },
+                  acc ->
+                    # Ignore Spare slots
+                    acc
+
+                  %{
+                    FeatureName: feature_name,
+                    FeatureValues: feature_values
+                  },
+                  acc ->
+                    processed_feature_values =
+                      feature_values
+                      |> String.split("|")
+                      |> Enum.reduce([], fn element, acc ->
+                        case element |> String.split("/") do
+                          [full_term, abbr_term] -> [{abbr_term, full_term} | acc]
+                          _ -> acc
+                        end
+                      end)
+                      |> Enum.reverse()
+                      |> Map.new()
+
+                    [
+                      %{
+                        feature_name: feature_name,
+                        feature_values: processed_feature_values
+                      }
+                      | acc
+                    ]
+                end)
+                |> Enum.reverse()
+
+              {abbr_cat, processed_features}
+            end
+          )
+          |> Map.new()
+
+  def map do
+    @mapped
+  end
+
+  def mapping do
+    @category_mapping
+  end
+end
+```
+
+### Run this - the module that reshapes the list of tokens to a nested structure
+
+```elixir
+defmodule Reshape do
+  @moduledoc """
+  This takes the list generated by the Parse module and reshapes into into a nested structure
+  JSON ready representation
+
+  # Sample JSON which will be produced 
+  [
+  {
+    "Children": [
+      {
+        "Constituent": "then",
+        "LexicalSense": "A",
+        "Part": "Conjunction",
+        "SemanticComplexityLevel": "1",
+        "Implicit": "No"
+      },
+      {
+        "Children": [
+          {
+            "Constituent": "Boaz",
+            "LexicalSense": "A",
+            "NounListIndex": "1",
+            "Part": "Noun",
+            "SemanticComplexityLevel": "1",
+            "Future Expansion": "Unspecified",
+            "Number": "Singular",
+            "Participant Status": "Not Applicable",
+            "Participant Tracking": "Routine",
+            "Person": "Third",
+            "Polarity": "Affirmative",
+            "Proximity": "Not Applicable",
+            "Surface Realization": "Noun"
+          },
+          { "Part": "Space" }
+        ],
+        "Part": "NP",
+        "Implicit": "Not Applicable",
+        "Relativized": "No",
+        "Semantic Role": "Most Agent-like",
+        "Sequence": "Not in a Sequence",
+        "Thing-Thing Relationship": "Unspecified"
+      },
+      {
+        "Children": [
+          {
+            "Constituent": "say",
+            "LexicalSense": "A",
+            "Part": "Verb",
+            "SemanticComplexityLevel": "1",
+            "Adjective Degree": "No Degree",
+            "Aspect": "Unmarked",
+            "Mood": "Indicative",
+            "Polarity": "Affirmative",
+            "Reflexivity": "Not Applicable",
+            "Target Aspect": "Unspecified",
+            "Target Mood": "Unspecified",
+            "Target Tense & Form": "Unspecified",
+            "Time": "Discourse"
+          },
+          { "Part": "Space" }
+        ],
+        "Part": "VP",
+        "Implicit": "No",
+        "Sequence": "Not in a Sequence"
+      }, ....
+  """
+
+  # Use for guard
+  @consituent_parts [
+    :Noun,
+    :Verb,
+    :Adjective,
+    :Adverb,
+    :Adposition,
+    :Conjunction,
+    :Phrasal,
+    :Particle,
+    :Paragraph,
+    :Episode
+  ]
+
+  # Use for guard
+  @clause_parts [:NP, :VP, :AdjP, :AdvP, :Clause]
+
+  # Period
+  defp reshape_category(:., _attr) do
+    :period
+  end
+
+  # Noun
+  defp reshape_category(:N = category, attr) do
+    # Noun
+    # N-1A2PDAnK3NN........
+    # semantic_complexity_level 1
+    # lexical_sense A
+    # noun_list_index 2
+    # rest PDAnK3NN........
+    # rest split into chars and zipped with the list of semantic categories from the DB
+    <<semantic_complexity_level::utf8, lexical_sense::utf8, noun_list_index::utf8, rest::binary>> =
+      attr
+
+    syntactic_categories = Category.map()[category]
+    {_, category_name} = Category.mapping()[category]
+
+    rest
+    |> String.split("")
+    # Because it splits on empty string it generates "" first which needs to be skipped
+    |> Enum.drop(1)
+    # Zip the two to map them both
+    |> Enum.zip(syntactic_categories)
+    |> Enum.map(fn {cat_val,
+                    %{
+                      feature_name: feature_name,
+                      feature_values: feature_values
+                    }} ->
+      {feature_name, feature_values[cat_val]}
+    end)
+    |> Map.new()
+    |> Map.put(
+      :SemanticComplexityLevel,
+      code_point_to_string(semantic_complexity_level)
+    )
+    |> Map.put(:LexicalSense, code_point_to_string(lexical_sense))
+    |> Map.put(:NounListIndex, code_point_to_string(noun_list_index))
+    |> Map.put(:Part, category_name)
+  end
+
+  # All the other word types 
+  # eg Verb
+  # V-1MPUINAN...........
+  # semantic_complexity_level 1
+  # lexical_sense M
+  # rest PUINAN...........
+  # This is split and zipped with semantic categories from the DB (for Verbs)
+  defp reshape_category(category, attr) when category in [:V, :A, :a, :P, :C, :r, :p] do
+    <<semantic_complexity_level::utf8, lexical_sense::utf8, rest::binary>> = attr
+
+    syntactic_categories = Category.map()[category]
+    {_, category_name} = Category.mapping()[category]
+
+    rest
+    |> String.split("")
+    |> Enum.drop(1)
+    |> Enum.zip(syntactic_categories)
+    |> Enum.map(fn {cat_val,
+                    %{
+                      feature_name: feature_name,
+                      feature_values: feature_values
+                    }} ->
+      {feature_name, feature_values[cat_val]}
+    end)
+    |> Map.new()
+    |> Map.put(
+      :SemanticComplexityLevel,
+      code_point_to_string(semantic_complexity_level)
+    )
+    |> Map.put(:LexicalSense, code_point_to_string(lexical_sense))
+    |> Map.put(:Part, category_name)
+  end
+
+  # All phrases and clauses and similar structure
+  # No prefix 
+  # eg Noun phrase
+  # n-SAN.N........
+  # SAN.N........ split and zipped with semantic categories from the DB (for Nouns)
+  defp reshape_category(category, attr) when category in [:n, :v, :j, :d, :c, :R, :E] do
+    <<rest::binary>> = attr
+
+    syntactic_categories = Category.map()[category]
+    {_, category_name} = Category.mapping()[category]
+
+    rest
+    |> String.split("")
+    |> Enum.drop(1)
+    |> Enum.zip(syntactic_categories)
+    |> Enum.map(fn {cat_val,
+                    %{
+                      feature_name: feature_name,
+                      feature_values: feature_values
+                    }} ->
+      {feature_name, feature_values[cat_val]}
+    end)
+    |> Map.new()
+    |> Map.put(:Part, category_name)
+  end
+
+  # If it has the right pattern X-whatever.... it gets through 
+  defp replace_values({:element, [<<category::utf8, "-"::utf8, attr::binary>>]}) do
+    reshape_category(code_point_to_atom(category), attr)
+  end
+
+  # Otherwise pass through with no alteration
+  defp replace_values(other), do: other
+
+  # Helper function ?a -> "a"
+  defp code_point_to_string(cp) when is_integer(cp), do: [cp] |> to_string()
+
+  # Helper function ?a -> :a
+  defp code_point_to_atom(cp) when is_integer(cp),
+    do: [cp] |> to_string() |> String.to_existing_atom()
+
+  # Make sure corresponding tags are correlated
+  def pairs do
+    %{begin_clause: :end_clause, begin_subclause: :end_subclause, begin_phrase: :end_phrase}
+  end
+
+  # End of the list - recurse back
+  def combine([]) do
+    throw(
+      {:error, :bad_parse, "Parsing error. Please check the source data for unusual characters."}
+    )
+  end
+
+  # End of the list - recurse back
+  def combine([{:done, ["yay"]}]) do
+    []
+  end
+
+  # End of a clause, subclause or phrase, recurse back
+  # The rest of the list is in the final element so the list can continue to be processed
+  def combine([{:end_clause, ["}"]} | tail]) do
+    [{:end_clause, tail}]
+  end
+
+  def combine([{:end_subclause, ["]"]} | tail]) do
+    [{:end_subclause, tail}]
+  end
+
+  def combine([{:end_phrase, [")"]} | tail]) do
+    [{:end_phrase, tail}]
+  end
+
+  def combine([{:space, [" "]} | tail]) do
+    [%{Part: :Space} | combine(tail)]
+  end
+
+  def combine([:period, {:constituent, ["."]} | tail]) do
+    [%{Part: :Period} | combine(tail)]
+  end
+
+  def combine([{:constituent, [","]} | tail]) do
+    [%{Part: :Comma} | combine(tail)]
+  end
+
+  def combine([%{Part: :Episode} | tail]) do
+    [%{Part: :Episode} | combine(tail)]
+  end
+
+  # Combine the constiuents with their preceeding part of speech 
+  # eg put "run" with :Verb
+  def combine([%{Part: part} = element, {:constituent, [constituent]} | tail])
+      when part in @consituent_parts do
+    # Sometimes constituents stored as `cry/Aweep` - split and return `weep`
+    constituent =
+      case String.split(constituent, "/") do
+        [constituent] -> constituent
+        [_discard, <<_sense::utf8, constituent::binary>>] -> constituent
+      end
+
+    [Map.put(element, :Constituent, constituent) | combine(tail)]
+  end
+
+  # If a constituent is alone just put it by itself
+  def combine([{:constituent, [constituent]} | tail]) do
+    [%{Constituent: constituent} | combine(tail)]
+  end
+
+  # Where all the action happens for the nested elements
+  def combine([%{Part: part} = parent_element, {begin, _symbol} | tail])
+      when part in @clause_parts do
+    # Get all the nested children
+    # The rest of the list is in the last element so it needs to be processed below
+    child_elements = combine(tail)
+
+    # Get the closing tag to go with this opening one
+    end_of = pairs()[begin]
+
+    # Fetch the remaining list from the last element
+    processed_children =
+      child_elements
+      |> Enum.reduce(%{Children: []}, fn
+        {^end_of, rest}, %{Children: children} ->
+          %{Children: children |> Enum.reverse(), rest: rest}
+
+        %{} = elem, %{Children: children} ->
+          %{Children: [elem | children]}
+
+        {other, rest}, %{Children: _children} ->
+          # If this happens, time to barf
+          # A different tag is trying to close than the matching one
+          IO.inspect(trying: other, needs: end_of, unprocessed_list: rest)
+
+          throw(
+            {:error, :mismatched_tags,
+             "Mismatched tags: #{inspect(trying: other, needs: end_of)}"}
+          )
+      end)
+
+    case processed_children do
+      %{Children: children, rest: rest} ->
+        # Put the nested children into the parent
+        merged = parent_element |> Map.put(:Children, children)
+        [merged | combine(rest)]
+
+      barf ->
+        throw(
+          {:error, :missing_closing_tag,
+           "Likely missing closing tag, look here in the data: #{inspect(barf)}"}
+        )
+    end
+  end
+
+  def check_for_incomplete(parsed) when is_list(parsed) do
+    case List.last(parsed) do
+      {:end_clause, _} = rest ->
+        throw(
+          {:error, :incomplete,
+           "Probably have an end tag without a beginning tag: #{inspect(rest)}"}
+        )
+
+      _good_to_go ->
+        parsed
+    end
+  end
+
+  # Launcher
+  def parse_verse(verse) do
+    {:ok, parsed, unparsed, _, _, _} = Parse.verse(verse)
+
+    try do
+      parsed
+      |> Enum.map(fn element ->
+        # Replace the compact string with expanded values where applicable
+        replace_values(element)
+      end)
+      |> combine()
+      |> check_for_incomplete()
+    catch
+      {:error, :bad_parse, message} ->
+        IO.inspect(message <> " Unparsed data: #{inspect(unparsed)}")
+
+        # Rethrow if you want to stop on errors
+        throw("Parsing error - check the data.")
+
+      error ->
+        IO.inspect(error)
+        # Rethrow if you want to stop on errors
+        throw(error)
+    end
+  end
+end
+```
+
+### Run this - it is needed to name the output files
+
+```elixir
+defmodule VerseFile do
+  @books [
+    "Genesis",
+    "Exodus",
+    "Leviticus",
+    "Numbers",
+    "Deuteronomy",
+    "Joshua",
+    "Judges",
+    "Ruth",
+    "1 Samuel",
+    "2 Samuel",
+    "1 Kings",
+    "2 Kings",
+    "1 Chronicles",
+    "2 Chronicles",
+    "Ezra",
+    "Nehemiah",
+    "Esther",
+    "Job",
+    "Psalms",
+    "Proverbs",
+    "Ecclesiastes",
+    "Song of Solomon",
+    "Isaiah",
+    "Jeremiah",
+    "Lamentations",
+    "Ezekiel",
+    "Daniel",
+    "Hosea",
+    "Joel",
+    "Amos",
+    "Obadiah",
+    "Jonah",
+    "Micah",
+    "Nahum",
+    "Habakkuk",
+    "Zephaniah",
+    "Haggai",
+    "Zechariah",
+    "Malachi",
+    "Matthew",
+    "Mark",
+    "Luke",
+    "John",
+    "Acts",
+    "Romans",
+    "1 Corinthians",
+    "2 Corinthians",
+    "Galatians",
+    "Ephesians",
+    "Philippians",
+    "Colossians",
+    "1 Thessalonians",
+    "2 Thessalonians",
+    "1 Timothy",
+    "2 Timothy",
+    "Titus",
+    "Philemon",
+    "Hebrews",
+    "James",
+    "1 Peter",
+    "2 Peter",
+    "1 John",
+    "2 John",
+    "3 John",
+    "Jude",
+    "Revelations"
+  ]
+
+  @skip [
+    "1 Kings",
+    "Psalms"
+  ]
+
+  # Just a bit of trickery to generate a function per book for easier pattern matching
+  for {book, index} <- Enum.with_index(@books, 0) do
+    def namer("#{unquote(book)}" <> ref) do
+      [chapter, verse] = ref |> String.trim() |> String.split(":")
+
+      processed_book =
+        "#{unquote(book)}"
+        |> String.split(" ")
+        |> Enum.join("_")
+
+      [
+        String.pad_leading("#{unquote(index)}", 2, "0"),
+        String.pad_leading("#{chapter}", 3, "0"),
+        String.pad_leading("#{verse}", 3, "0"),
+        processed_book
+      ]
+      |> Enum.join("_")
+    end
+  end
+
+  for book <- @books do
+    def underscored("#{unquote(book)}") do
+      "#{unquote(book)}"
+      |> String.split(" ")
+      |> Enum.join("_")
+    end
+  end
+
+  def all_underscored do
+    (@books -- @skip) |> Enum.map(&underscored/1)
+  end
+end
+```
+
+### Not recommended - for troubleshooting purposes
+
+```elixir
+# Parse one verse - parsing only into tokens
+df = DF.from_csv!("#{Locations.bible()}Matthew.csv") |> DF.arrange(col("ID"))
+# DF.table(df, limit: 200)
+
+df
+|> DF.arrange(col("ID"))
+|> DF.filter(col("Reference") == "Matthew 13:44")
+|> DF.select(["Reference", "AnalyzedVerse"])
+|> DF.to_rows(atom_keys: true)
+|> Enum.at(0)
+|> tap(fn %{Reference: ref, AnalyzedVerse: verse} ->
+  IO.inspect([ref: ref, AnalyzedVerse: verse], printable_limit: :infinity, limit: :infinity)
+
+  case {ref, verse} do
+    {nil, _verse} ->
+      :skip
+
+    {_ref, nil} ->
+      :skip
+
+    _lets_go ->
+      Parse.verse(verse) |> IO.inspect(printable_limit: :infinity, limit: :infinity)
+  end
+end)
+```
+
+### Optional - for troubleshooting purposes or to regenerate a verse
+
+```elixir
+# Run one verse
+df = DF.from_csv!("#{Locations.bible()}Mark.csv")
+# Uncomment this and comment out the rest to view as a table
+# DF.table(df, limit: :infinity)
+
+df
+|> DF.arrange(col("ID"))
+|> DF.filter(col("Reference") == "Mark 8:38")
+|> DF.select(["Reference", "AnalyzedVerse"])
+|> DF.to_rows(atom_keys: true)
+|> Enum.at(0)
+|> tap(fn %{Reference: ref, AnalyzedVerse: verse} ->
+  IO.inspect([ref: ref, AnalyzedVerse: verse], printable_limit: :infinity, limit: :infinity)
+
+  case {ref, verse} do
+    {nil, _verse} ->
+      :skip
+
+    {_ref, nil} ->
+      :skip
+
+    _lets_go ->
+      file_name = VerseFile.namer(ref)
+
+      File.write!(
+        "#{Locations.json()}json#{file_name}.json",
+        Reshape.parse_verse(verse)
+        |> Jason.encode!()
+        |> Jason.Formatter.pretty_print_to_iodata()
+      )
+  end
+end)
+```
+
+### Run this to generate all of the available Bible into JSON
+
+```elixir
+VerseFile.all_underscored()
+|> Enum.each(fn book ->
+  df = Explorer.DataFrame.from_csv!("#{Locations.bible()}#{book}.csv")
+
+  df
+  |> Explorer.DataFrame.arrange(col("ID"))
+  |> Explorer.DataFrame.select(["Reference", "AnalyzedVerse"])
+  |> DF.to_rows(atom_keys: true)
+  |> Enum.each(fn %{Reference: ref, AnalyzedVerse: verse} ->
+    IO.inspect([ref: ref, AnalyzedVerse: verse], printable_limit: :infinity, limit: :infinity)
+
+    case {ref, verse} do
+      {nil, _verse} ->
+        :skip
+
+      {_ref, nil} ->
+        :skip
+
+      _letsgo ->
+        file_name = VerseFile.namer(ref)
+
+        try do
+          File.write!(
+            "#{Locations.json()}xml#{file_name}.json",
+            Reshape.parse_verse(verse)
+            # |> IO.inspect(printable_limit: :infinity, limit: :infinity)
+            |> Jason.encode!()
+            |> Jason.Formatter.pretty_print_to_iodata()
+          )
+        rescue
+          # This will keep rolling after a Jason error
+          Protocol.UndefinedError ->
+            IO.puts("Error on #{inspect(ref)}")
+        end
+    end
+  end)
+end)
+```
+
+### Run this to translate Reshape into XML
+
+```elixir
+defmodule XML do
+  def magic([]) do
+    []
+  end
+
+  def magic([head | tail]) do
+    [magic(head) | magic(tail)]
+  end
+
+  def magic(%{Children: children, Part: part} = element) do
+    attr =
+      element
+      |> Map.delete(:Children)
+      |> Map.delete(:Part)
+      |> Enum.map(fn {key, value} ->
+        {String.split(to_string(key), " ") |> Enum.join(), value}
+      end)
+      |> Map.new()
+
+    XmlBuilder.element(part, attr, magic(children))
+  end
+
+  def magic(%{Constituent: constituent, Part: part} = element) do
+    attr =
+      element
+      |> Map.delete(:Constituent)
+      |> Map.delete(:Part)
+      |> Enum.map(fn {key, value} ->
+        {String.split(to_string(key), " ") |> Enum.join(), value}
+      end)
+      |> Map.new()
+
+    XmlBuilder.element(part, attr, constituent)
+  end
+
+  def magic(%{Part: part}) do
+    XmlBuilder.element(part)
+  end
+
+  def magic(%{Constituent: _constituent}) do
+    ""
+  end
+
+  def json_to_xml(verse) do
+    XmlBuilder.document([
+      XmlBuilder.doctype("", system: "TBTA"),
+      Reshape.parse_verse(verse)
+      |> magic()
+    ])
+    |> XmlBuilder.generate()
+  end
+end
+```
+
+### Run this to generate all of the available Bible into XML
+
+```elixir
+VerseFile.all_underscored()
+|> Enum.each(fn book ->
+  df = DF.from_csv!("#{Locations.bible()}#{book}.csv")
+  # Explorer.DataFrame.table(df, limit: :infinity)
+
+  df
+  |> DF.arrange(col("ID"))
+  |> DF.select(["Reference", "AnalyzedVerse"])
+  |> DF.to_rows(atom_keys: true)
+  |> Enum.each(fn %{Reference: ref, AnalyzedVerse: verse} ->
+    IO.inspect([ref: ref, AnalyzedVerse: verse], printable_limit: :infinity, limit: :infinity)
+
+    case {ref, verse} do
+      {nil, _verse} ->
+        :skip
+
+      {_ref, nil} ->
+        :skip
+
+      _letsgo ->
+        file_name = VerseFile.namer(ref)
+
+        File.write!(
+          "#{Locations.xml()}#{file_name}.xml",
+          XML.json_to_xml(verse)
+        )
+    end
+  end)
+end)
+```

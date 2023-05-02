@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  SYSTEM "TBTA">
+<Paragraph>|</Paragraph>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">plan</Noun>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+        <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+            <Space/>
+          </NP>
+          <VP Implicit="No" Sequence="Not in a Sequence">
+            <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">work</Verb>
+            <Space/>
+          </VP>
+          <AdvP Implicit="No" Sequence="Not in a Sequence">
+            <Adverb Degree="No Degree" LexicalSense="A" SemanticComplexityLevel="1">hard</Adverb>
+            <Space/>
+          </AdvP>
+          <Space/>
+        </Clause>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="C" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">make</Verb>
+        <Space/>
+      </VP>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">plan</Noun>
+        <Space/>
+      </NP>
+      <Space/>
+    </Clause>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">cause</Verb>
+    <Space/>
+  </VP>
+  <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+      <Space/>
+    </NP>
+    <VP Implicit="No" Sequence="Not in a Sequence">
+      <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">get</Verb>
+      <Space/>
+    </VP>
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <AdjP Implicit="No" Sequence="Not in a Sequence" Usage="Attributive">
+        <Adjective Degree="No Degree" LexicalSense="A" SemanticComplexityLevel="1">all</Adjective>
+        <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Subgroup</Adposition>
+        <Space/>
+      </AdjP>
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="3" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+      <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+          <Space/>
+        </NP>
+        <VP Implicit="No" Sequence="Not in a Sequence">
+          <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="B" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">need</Verb>
+          <Space/>
+        </VP>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="3" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+          <Space/>
+        </NP>
+        <Space/>
+      </Clause>
+      <Space/>
+    </NP>
+    <Space/>
+  </Clause>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <Conjunction Implicit="No" LexicalSense="A" SemanticComplexityLevel="1">but</Conjunction>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="5" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="First Coordinate" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="5" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">act</Verb>
+        <Space/>
+      </VP>
+      <AdvP Implicit="No" Sequence="Not in a Sequence">
+        <Adverb Degree="No Degree" LexicalSense="A" SemanticComplexityLevel="1">quickly</Adverb>
+        <Space/>
+      </AdvP>
+      <Space/>
+    </Clause>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Implicit Situational Information" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Last Coordinate" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+      <Conjunction Implicit="No" LexicalSense="A" SemanticComplexityLevel="1">and</Conjunction>
+      <NP Implicit="Not Applicable" Relativized="" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="5" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="B" Mood="Indicative" Polarity="Negative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">plan</Verb>
+        <Space/>
+      </VP>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="B" NounListIndex="4" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+        <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="5" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="First Mention" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">person</Noun>
+            <Space/>
+          </NP>
+          <VP Implicit="No" Sequence="Not in a Sequence">
+            <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">do</Verb>
+            <Space/>
+          </VP>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Noun FutureExpansion="Unspecified" LexicalSense="B" NounListIndex="4" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+            <Space/>
+          </NP>
+          <Space/>
+        </Clause>
+        <Space/>
+      </NP>
+      <Space/>
+    </Clause>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">become</Verb>
+    <Space/>
+  </VP>
+  <AdjP Implicit="No" Sequence="Not in a Sequence" Usage="Predicative">
+    <Adjective Degree="No Degree" LexicalSense="A" SemanticComplexityLevel="1">poor</Adjective>
+    <Space/>
+  </AdjP>
+  <Period/>
+  <Space/>
+</Clause>

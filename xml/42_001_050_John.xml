@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  SYSTEM "TBTA">
+<Paragraph>|</Paragraph>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Content Question" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="E" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">ask</Verb>
+    <Space/>
+  </VP>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+    <Space/>
+  </NP>
+  <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Yes-No Interrogative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+    <Particle LexicalSense="A" SemanticComplexityLevel="1">-QuoteBegin</Particle>
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+      <Space/>
+    </NP>
+    <VP Implicit="No" Sequence="Not in a Sequence">
+      <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="C" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">believe</Verb>
+      <Space/>
+    </VP>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Implicit Situational Information" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Contextually Near" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="M" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">be</Verb>
+        <Space/>
+      </VP>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="State" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="3" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">son</Noun>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="First Coordinate" Thing-ThingRelationship="Unspecified">
+          <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Kinship</Adposition>
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="4" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">God</Noun>
+          <Space/>
+        </NP>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="Last Coordinate" Thing-ThingRelationship="Unspecified">
+          <Conjunction Implicit="No" LexicalSense="B" SemanticComplexityLevel="1">and</Conjunction>
+          <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Kinship</Adposition>
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="5" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Region of Authority</Adposition>
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="6" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Israel</Noun>
+            <Space/>
+          </NP>
+          <Space/>
+        </NP>
+        <Space/>
+      </NP>
+      <Space/>
+    </Clause>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Event Modifier (Adverbial Clause)" VocabularyAlternate="Not Applicable">
+      <Adposition LexicalSense="A" SemanticComplexityLevel="1">because</Adposition>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">tell</Verb>
+        <Space/>
+      </VP>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+        <Space/>
+      </NP>
+      <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+        <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Event Modifier (Adverbial Clause)" VocabularyAlternate="Not Applicable">
+          <Adposition LexicalSense="A" SemanticComplexityLevel="1">when</Adposition>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+            <Space/>
+          </NP>
+          <VP Implicit="No" Sequence="Not in a Sequence">
+            <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="F" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">be</Verb>
+            <Space/>
+          </VP>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="State" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Adposition LexicalSense="A" SemanticComplexityLevel="1">under</Adposition>
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="7" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">tree-fig</Noun>
+            <Space/>
+          </NP>
+          <Space/>
+        </Clause>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Contextually Near" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+          <Space/>
+        </NP>
+        <VP Implicit="No" Sequence="Not in a Sequence">
+          <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">see</Verb>
+          <Space/>
+        </VP>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+          <Space/>
+        </NP>
+        <Space/>
+      </Clause>
+      <Space/>
+    </Clause>
+    <Space/>
+  </Clause>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Equivalent Statement" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">say</Verb>
+    <Space/>
+  </VP>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Destination" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+    <Space/>
+  </NP>
+  <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+    <Particle LexicalSense="A" SemanticComplexityLevel="1">-QuoteBegin</Particle>
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+      <Space/>
+    </NP>
+    <VP Implicit="No" Sequence="Not in a Sequence">
+      <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="C" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">believe</Verb>
+      <Space/>
+    </VP>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Implicit Situational Information" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Contextually Near" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="M" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">be</Verb>
+        <Space/>
+      </VP>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="State" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="3" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">son</Noun>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="First Coordinate" Thing-ThingRelationship="Unspecified">
+          <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Kinship</Adposition>
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="4" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">God</Noun>
+          <Space/>
+        </NP>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="Last Coordinate" Thing-ThingRelationship="Unspecified">
+          <Conjunction Implicit="No" LexicalSense="B" SemanticComplexityLevel="1">and</Conjunction>
+          <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Kinship</Adposition>
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="5" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Adposition LexicalSense="A" SemanticComplexityLevel="1">-Region of Authority</Adposition>
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="6" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Israel</Noun>
+            <Space/>
+          </NP>
+          <Space/>
+        </NP>
+        <Space/>
+      </NP>
+      <Space/>
+    </Clause>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Event Modifier (Adverbial Clause)" VocabularyAlternate="Not Applicable">
+      <Adposition LexicalSense="A" SemanticComplexityLevel="1">because</Adposition>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">tell</Verb>
+        <Space/>
+      </VP>
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+        <Space/>
+      </NP>
+      <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+        <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Event Modifier (Adverbial Clause)" VocabularyAlternate="Not Applicable">
+          <Adposition LexicalSense="A" SemanticComplexityLevel="1">when</Adposition>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+            <Space/>
+          </NP>
+          <VP Implicit="No" Sequence="Not in a Sequence">
+            <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="F" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">be</Verb>
+            <Space/>
+          </VP>
+          <NP Implicit="Not Applicable" Relativized="No" SemanticRole="State" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+            <Adposition LexicalSense="A" SemanticComplexityLevel="1">under</Adposition>
+            <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="7" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">tree-fig</Noun>
+            <Space/>
+          </NP>
+          <Space/>
+        </Clause>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Jesus</Noun>
+          <Space/>
+        </NP>
+        <VP Implicit="No" Sequence="Not in a Sequence">
+          <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">see</Verb>
+          <Space/>
+        </VP>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+          <Space/>
+        </NP>
+        <Space/>
+      </Clause>
+      <Space/>
+    </Clause>
+    <Space/>
+  </Clause>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">Nathanael</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">see</Verb>
+    <Space/>
+  </VP>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Patient-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="B" NounListIndex="8" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Generic" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Man" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Not Applicable" Sequence="Not in a Sequence" Speaker="Jesus" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Restrictive Thing Modifier (Relative Clause)" VocabularyAlternate="Not Applicable">
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="B" NounListIndex="8" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Generic" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="D" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">be</Verb>
+        <Space/>
+      </VP>
+      <AdjP Implicit="No" Sequence="Not in a Sequence" Usage="Predicative">
+        <Adjective Degree="Comparative" LexicalSense="A" SemanticComplexityLevel="1">great</Adjective>
+        <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+          <Noun FutureExpansion="Unspecified" LexicalSense="B" NounListIndex="8" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Contextually Near" SemanticComplexityLevel="1" SurfaceRealization="Noun">thing</Noun>
+          <Space/>
+        </NP>
+        <Space/>
+      </AdjP>
+      <Space/>
+    </Clause>
+    <Space/>
+  </NP>
+  <Particle LexicalSense="A" SemanticComplexityLevel="1">-QuoteEnd</Particle>
+  <Period/>
+  <Space/>
+</Clause>

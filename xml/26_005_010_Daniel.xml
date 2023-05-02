@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  SYSTEM "TBTA">
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">queen</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="C" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">hear</Verb>
+    <Space/>
+  </VP>
+  <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+      <Space/>
+    </NP>
+    <VP Implicit="No" Sequence="Not in a Sequence">
+      <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">talk</Verb>
+      <Space/>
+    </VP>
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Destination" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="3" Number="Plural" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">official</Noun>
+      <Space/>
+    </NP>
+    <Space/>
+  </Clause>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <Conjunction Implicit="No" LexicalSense="A" SemanticComplexityLevel="1">so</Conjunction>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">queen</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">come</Verb>
+    <Space/>
+  </VP>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Not Applicable" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Adposition LexicalSense="A" SemanticComplexityLevel="1">into</Adposition>
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="4" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">room</Noun>
+    <Space/>
+  </NP>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="Not Applicable" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Not Applicable" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Not Applicable" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <Conjunction Implicit="No" LexicalSense="A" SemanticComplexityLevel="1">and</Conjunction>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">queen</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Discourse">say</Verb>
+    <Space/>
+  </VP>
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Destination" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+    <Space/>
+  </NP>
+  <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="King" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Queen" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Familiar" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+    <Particle LexicalSense="A" SemanticComplexityLevel="1">-QuoteBegin</Particle>
+    <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+      <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="1" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="First" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">queen</Noun>
+      <Space/>
+    </NP>
+    <VP Implicit="No" Sequence="Not in a Sequence">
+      <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">pray-hope</Verb>
+      <Space/>
+    </VP>
+    <Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Declarative" ImplicitInformation="Not Applicable" Listener="King" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Queen" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Familiar" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Patient (Object Complement)" VocabularyAlternate="Not Applicable">
+      <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+        <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second as Third" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+        <Space/>
+      </NP>
+      <VP Implicit="No" Sequence="Not in a Sequence">
+        <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="B" Mood="Indicative" Polarity="Affirmative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Present">live</Verb>
+        <Space/>
+      </VP>
+      <AdvP Implicit="No" Sequence="Not in a Sequence">
+        <Adverb Degree="No Degree" LexicalSense="A" SemanticComplexityLevel="1">forever</Adverb>
+        <Space/>
+      </AdvP>
+      <Space/>
+    </Clause>
+    <Particle LexicalSense="A" SemanticComplexityLevel="1">exclamation</Particle>
+    <Space/>
+  </Clause>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Imperative" ImplicitInformation="Not Applicable" Listener="King" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Queen" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Familiar" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="D" Mood="Indicative" Polarity="Negative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">be</Verb>
+    <Space/>
+  </VP>
+  <AdjP Implicit="No" Sequence="Not in a Sequence" Usage="Predicative">
+    <Adjective Degree="No Degree" LexicalSense="A" SemanticComplexityLevel="1">afraid</Adjective>
+    <Space/>
+  </AdjP>
+  <Particle LexicalSense="A" SemanticComplexityLevel="1">exclamation</Particle>
+  <Period/>
+  <Space/>
+</Clause>
+<Clause AlternativeAnalysis="Not Applicable" DiscourseGenre="Climactic Narrative Story" IllocutionaryForce="Imperative" ImplicitInformation="Not Applicable" Listener="King" Location="Not Applicable" NotionalStructureSchema="Not Applicable" RhetoricalQuestion="Not Applicable" SalienceBand="Primary Storyline" Sequence="Not in a Sequence" Speaker="Queen" Speaker-ListenerAge="Not Applicable" Speaker`sAge="Not Applicable" Speaker`sAttitude="Familiar" SpeechStyle="Not Applicable" TopicNP="Most Agent-like" Type="Independent" VocabularyAlternate="Not Applicable">
+  <NP Implicit="Not Applicable" Relativized="No" SemanticRole="Most Agent-like" Sequence="Not in a Sequence" Thing-ThingRelationship="Unspecified">
+    <Noun FutureExpansion="Unspecified" LexicalSense="A" NounListIndex="2" Number="Singular" ParticipantStatus="Not Applicable" ParticipantTracking="Routine" Person="Second" Polarity="Affirmative" Proximity="Not Applicable" SemanticComplexityLevel="1" SurfaceRealization="Noun">king</Noun>
+    <Space/>
+  </NP>
+  <VP Implicit="No" Sequence="Not in a Sequence">
+    <Verb AdjectiveDegree="No Degree" Aspect="Unmarked" LexicalSense="A" Mood="Indicative" Polarity="Negative" Reflexivity="Not Applicable" SemanticComplexityLevel="1" TargetAspect="Unspecified" TargetMood="Unspecified" TargetTense&Form="Unspecified" Time="Immediate Future">worry</Verb>
+    <Space/>
+  </VP>
+  <Particle LexicalSense="A" SemanticComplexityLevel="1">exclamation</Particle>
+  <Period/>
+  <Space/>
+</Clause>
