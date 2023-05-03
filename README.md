@@ -1,6 +1,6 @@
 # The Bible Translator's Assistant (TBTA) DB Export
 
-[TBTA](https://alltheword.org/our-downloads/) is a tool to assist Bible translation using a rules based system. An intermediate translation is necessary. This intermediary form takes additional information and attaches it to the words, phrases and clauses in the text. TBTA uses a format internally which is not very accessible to someone not familiar with the project. This repo and accompanying Livebook exports to JSON and XML which are more well known formats.
+[TBTA](https://alltheword.org/our-downloads/) is a tool to assist Bible translation using a rules based system. A highly annotated source text is used. This intermediary form takes additional information and attaches it to the words, phrases and clauses in the text. TBTA uses a format internally which is not very accessible to someone not familiar with the project. This repo and accompanying Livebook exports to JSON and XML which are more well known formats.
 
 The naming scheme for the generated files is hopefully intuitive.
 
@@ -38,7 +38,7 @@ These examples are all taken from Ruth 3:17 unless otherwise noted. You can look
 
 ## Noun - `SyntacticCategory` 1
 
-`~\wd ~\tg N-1A1SDAnK3NN........~\lu Ruth~\wd ~\tg ~\lu`
+`~\wd ~\tg N-1A1SDAnK3NN........~\lu Ruth`
 
 `N-1A1SDAnK3NN........` is the semantic data
 
@@ -54,7 +54,11 @@ Let's refer to the positions by the index
 
 3- `A` - Lexical sense
 
-4- `1` - Noun list index - useful for track of which nouns are referring to the same thing
+4- `1` - Noun list index - useful for track of which nouns are referring to the same thing - if two nouns have the same index, they are the exact same thing
+
+If you have a verse talking about two of the same item, they will both get their own index
+
+It's useful to know the index is limited to one character so the numbering scheme is 1..9, A..Z, a..z
 
 ##### These are pulled from the Grammar DB (`Sample.mdb`) - important to keep them in order
 
@@ -84,13 +88,31 @@ At the end of the verse there is a list of nouns that this index refers to. Here
 
 `~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK1NN........~\lu Boaz~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu pray-hope~\wd ~\tg ~\lu )~\wd ~\tg c-PDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Yahweh~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu do~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu good~\wd ~\tg ~\lu )~\wd ~\tg N-1B3PGAnK3NN........~\lu thing~\wd ~\tg ~\lu )~\wd ~\tg n-SBN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg c-EDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg P-1A.....~\lu because~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AeUINAN...........~\lu do~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu good~\wd ~\tg ~\lu )~\wd ~\tg N-1BAPGAnK3NN........~\lu thing~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg C-1A.....~\lu and~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK1NN........~\lu Boaz~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu pray-hope~\wd ~\tg ~\lu )~\wd ~\tg c-PDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Yahweh~\wd ~\tg c-tDpTenDONNNNNNNNNN.............~\lu [~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAcK3NN........~\lu Yahweh~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1BPUINAN...........~\lu be~\wd ~\tg ~\lu )~\wd ~\tg n-SSN.N........~\lu (~\wd ~\tg N-1A5SFAnK3NN........~\lu God~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Generic Genitive~\wd ~\tg N-1A6SDAnK3NN........~\lu Israel~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu give~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu much-many~\wd ~\tg ~\lu )~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu good~\wd ~\tg ~\lu )~\wd ~\tg N-1ABPGAnK3NN........~\lu thing~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AeUINAN...........~\lu come~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Yahweh~\wd ~\tg ~\lu )~\wd ~\tg c-EDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg P-1A.....~\lu just-like~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu young~\wd ~\tg ~\lu )~\wd ~\tg N-1A7SIAnK3NN........~\lu bird~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1APUINAN...........~\lu come~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A8SFAnK3NN........~\lu mother~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Kinship~\wd ~\tg N-1A7SDAnK3NN........~\lu bird~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A9PFAnK3NN........~\lu wing~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Body Part~\wd ~\tg N-1A8SDAnK3NN........~\lu mother~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1APGINAN...........~\lu protect~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu young~\wd ~\tg ~\lu )~\wd ~\tg N-1A7SDAcK3NN........~\lu bird~\wd ~\tg ~\lu )~\wd ~\tg r-1A.....~\lu -QuoteEnd~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~|ABoaz|AYahweh|Bthing|ARuth|AGod|AIsrael|Abird|Amother|Awing|Bthing|Athing|||||||||||||||||||||||||`
 
-This list `~|ABoaz|AYahweh|Bthing|ARuth|AGod|AIsrael|Abird|Amother|Awing|Bthing|Athing|||||||||||||||||||||||||` is every noun in the verse in the order they appear. They are prefixed with their index of `A`, `B`, ...
+This list `~|ABoaz|AYahweh|Bthing|ARuth|AGod|AIsrael|Abird|Amother|Awing|Bthing|Athing|||||||||||||||||||||||||` is every noun in the verse. They are prefixed with their lexical sense of `A`, `B`, etc.
 
-The two `Bthing`s are referring to the same item as opposed to `Athing` which is a different item. This is useful for replacing with pronouns, etc. These values from the final string are not reflected in the JSON or XML apart from including their index.
+The two `Bthing`s are referring to different items so they get their own noun list index ([as seen here](json/07_002_012_Ruth.json) and below). This list is not being used in the derived JSON or XML as the noun list index is already in the derived data. It may be useful if you choose to create your own parser.
+
+```json
+{
+  "Constituent": "thing",
+  "LexicalSense": "B",
+  "NounListIndex": "3",
+  "Part": "Noun",
+  "SemanticComplexityLevel": "1",
+  "Future Expansion": "Unspecified",
+  "Number": "Plural",
+  "Participant Status": "Not Applicable",
+  "Participant Tracking": "Generic",
+  "Person": "Third",
+  "Polarity": "Affirmative",
+  "Proximity": "Not Applicable",
+  "Surface Realization": "Noun"
+}
+```
 
 ## Verb - `SyntacticCategory` 2
 
-`~\wd ~\tg V-1ArUINAN...........~\lu say~\wd ~\tg ~\lu`
+`~\wd ~\tg V-1ArUINAN...........~\lu say`
 
 `V-1ArUINAN...........` is the semantic data
 
@@ -132,7 +154,7 @@ The value immediately following - `say` is the constituent
 
 ## Adjective - `SyntacticCategory` 3
 
-`~\wd ~\tg A-1AN.....~\lu 23~\wd ~\tg ~\lu`
+`~\wd ~\tg A-1AN.....~\lu 23`
 
 `A-1AN.....` is the semantic data
 
@@ -160,7 +182,7 @@ The value immediately following - `23` is the constituent.
 
 This example is from Ruth 1:14
 
-`~\wd ~\tg a-1AN.....~\lu again~\wd ~\tg ~\lu`
+`~\wd ~\tg a-1AN.....~\lu again`
 
 `a-1AN.....` is the semantic data
 
@@ -238,7 +260,7 @@ The value immediately following - `and` is the constituent
 
 This example is from Exodus 3:17
 
-`~\tg p-1A.....~\lu I am who I am~\wd ~\tg ~\lu`
+`~\tg p-1A.....~\lu I am who I am`
 
 `p-1A.....` is the semantic data
 
@@ -288,7 +310,7 @@ The value immediately following - `-QuoteBegin` is the constituent
 
 The phrases encapsulate other terms
 
-`~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK3NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg`
+`~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK3NN........~\lu Ruth~\wd ~\tg ~\lu )`
 
 `n-SAN.N........` is the semantic data
 
@@ -454,7 +476,7 @@ A paragraph marker immediately precedes a clause
 
 This example is from 2 Samuel 9:1
 
-`~\wd ~\tg R-~\lu |~\wd ~\tg c-IDp00NNNNNNNNNNNNN.............~\lu {`
+`~\wd ~\tg R-~\lu |~\wd ~\tg c-IDp00NNNNNNNNNNNNN.............~\lu`
 
 `R-` is the semantic data - it's empty
 
@@ -464,4 +486,4 @@ There are no examples of the episode marker in the derived data but if there wer
 
 It would look like this
 
-`~\wd ~\tg E-~\lu |~\wd ~\tg c-IDp00NNNNNNNNNNNNN.............~\lu {`
+`~\wd ~\tg E-~\lu |~\wd ~\tg c-IDp00NNNNNNNNNNNNN.............~\lu`
