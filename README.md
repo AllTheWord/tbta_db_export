@@ -32,9 +32,9 @@ For documentation purposes and the excessively curious, here is the parsing stra
 
 Each constituent, phrase, subclause or clause is preceded by a string that represents the semantics embedded in the term about to follow. This string is split into individual characters and matched with its values from the target grammar database (`Sample.mdb` in our case). If you're going to do this yourself, it's important to pull the values from the database as sorted by their `ID`s.
 
-Most of the elements are either wrapped in `~\wd ~\tg what you want ~\lu` or fall between them like `~\wd ~\tg before what you want ~\lu what you want ~\wd...` so that's the first step to understanding how to parse is you need to figure out how to capture these. For refence see the `Parse` module in the Livebook.
+Most of the elements are either wrapped in `~\wd ~\tg what you want ~\lu` or fall between them like `~\wd ~\tg before what you want ~\lu what you want ~\wd...` so that's the first step to understanding how to parse is you need to figure out how to capture these. For reference see the `Parse` module in the Livebook. For the matching the values from the semantic string to the DB values, it's the `Category` module. For the parsing of the semantic string into nested structures, etc., it's `Reshape`.
 
-These values are all taken from Ruth 3:17. You can look at the appropriate file in [JSON](json/07_003_017_Ruth.json) or [XML](xml/07_003_017_Ruth.xml) for the parsed result.
+These examples are all taken from Ruth 3:17 unless otherwise noted. You can look at the appropriate file in [JSON](json/07_003_017_Ruth.json) or [XML](xml/07_003_017_Ruth.xml) for the parsed result.
 
 ## Noun - `SyntacticCategory` 1
 
@@ -80,13 +80,13 @@ The value immediately following - `Ruth` is the constituent
 
 ##### Noun list index
 
-At the end of the verse there is a list of nouns that this index refers to. Here is the data in the raw from Ruth 2:12:
+At the end of the verse there is a list of nouns that this index refers to. Here is the raw data from Ruth 2:12:
 
 `~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK1NN........~\lu Boaz~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu pray-hope~\wd ~\tg ~\lu )~\wd ~\tg c-PDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Yahweh~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu do~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu good~\wd ~\tg ~\lu )~\wd ~\tg N-1B3PGAnK3NN........~\lu thing~\wd ~\tg ~\lu )~\wd ~\tg n-SBN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg c-EDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg P-1A.....~\lu because~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AeUINAN...........~\lu do~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu good~\wd ~\tg ~\lu )~\wd ~\tg N-1BAPGAnK3NN........~\lu thing~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg C-1A.....~\lu and~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A1SDAnK1NN........~\lu Boaz~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu pray-hope~\wd ~\tg ~\lu )~\wd ~\tg c-PDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Yahweh~\wd ~\tg c-tDpTenDONNNNNNNNNN.............~\lu [~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A2SDAcK3NN........~\lu Yahweh~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1BPUINAN...........~\lu be~\wd ~\tg ~\lu )~\wd ~\tg n-SSN.N........~\lu (~\wd ~\tg N-1A5SFAnK3NN........~\lu God~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Generic Genitive~\wd ~\tg N-1A6SDAnK3NN........~\lu Israel~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AEUINAN...........~\lu give~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu much-many~\wd ~\tg ~\lu )~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu good~\wd ~\tg ~\lu )~\wd ~\tg N-1ABPGAnK3NN........~\lu thing~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A4SDAnK2NN........~\lu Ruth~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1AeUINAN...........~\lu come~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A2SDAnK3NN........~\lu Yahweh~\wd ~\tg ~\lu )~\wd ~\tg c-EDpTenDONNNNNNNNN..............~\lu [~\wd ~\tg P-1A.....~\lu just-like~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu young~\wd ~\tg ~\lu )~\wd ~\tg N-1A7SIAnK3NN........~\lu bird~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1APUINAN...........~\lu come~\wd ~\tg ~\lu )~\wd ~\tg n-SdN.N........~\lu (~\wd ~\tg N-1A8SFAnK3NN........~\lu mother~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Kinship~\wd ~\tg N-1A7SDAnK3NN........~\lu bird~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg ~\lu ]~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~\wd ~\tg c-IDpTenDONNNNNNNNN..............~\lu {~\wd ~\tg n-SAN.N........~\lu (~\wd ~\tg N-1A9PFAnK3NN........~\lu wing~\wd ~\tg n-SNN.N........~\lu (~\wd ~\tg P-1A.....~\lu -Body Part~\wd ~\tg N-1A8SDAnK3NN........~\lu mother~\wd ~\tg ~\lu )~\wd ~\tg ~\lu )~\wd ~\tg v-S.....~\lu (~\wd ~\tg V-1APGINAN...........~\lu protect~\wd ~\tg ~\lu )~\wd ~\tg n-SPN.N........~\lu (~\wd ~\tg j-SA.....~\lu (~\wd ~\tg A-1AN.....~\lu young~\wd ~\tg ~\lu )~\wd ~\tg N-1A7SDAcK3NN........~\lu bird~\wd ~\tg ~\lu )~\wd ~\tg r-1A.....~\lu -QuoteEnd~\wd ~\tg .-~\lu .~\wd ~\tg ~\lu }~|ABoaz|AYahweh|Bthing|ARuth|AGod|AIsrael|Abird|Amother|Awing|Bthing|Athing|||||||||||||||||||||||||`
 
 This list `~|ABoaz|AYahweh|Bthing|ARuth|AGod|AIsrael|Abird|Amother|Awing|Bthing|Athing|||||||||||||||||||||||||` is every noun in the verse in the order they appear. They are prefixed with their index of `A`, `B`, ...
 
-The two `Bthing`s are referring to the same item as opposed to `Athing` which is a different item. This is useful for replacing with pronouns, etc.
+The two `Bthing`s are referring to the same item as opposed to `Athing` which is a different item. This is useful for replacing with pronouns, etc. These values from the final string are not reflected in the JSON or XML apart from including their index.
 
 ## Verb - `SyntacticCategory` 2
 
@@ -216,7 +216,7 @@ The value immediately following - `-Kinship` is the constituent
 
 Let's refer to the positions by the index
 
-0- `C` - Adposition
+0- `C` - Conjunction
 
 1- `-` - Separator
 
