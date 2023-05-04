@@ -64,11 +64,11 @@ It's useful to know the index is limited to one character so the numbering schem
 
 5- `S` - Number - `S`: Singular, `D`: Dual, `T`: Trial, `Q`: Quadrial, `p`: Paucal, `P`: Plural
 
-6- `D` - "Participant Tracking - `I`: First Mention, `D`: Routine, `i`: Integration, `E`: Exiting, `R`: Restaging, `O`: Offstage, `G`: Generic, `Q`: Interrogative, `F`: Frame Inferable
+6- `D` - Participant Tracking - `I`: First Mention, `D`: Routine, `i`: Integration, `E`: Exiting, `R`: Restaging, `O`: Offstage, `G`: Generic, `Q`: Interrogative, `F`: Frame Inferable
 
 7- `A` - Polarity - `A`: Affirmative, `N`: Negative
 
-8- `n` - "Proximity - `n`: Not Applicable, `N`: Near Speaker and Listener, `S`: Near Speaker, `L`: Near Listener, `R`: Remote within Sight, `r`: Remote out of Sight, `T`: Temporally Near, `t`: Temporally Remote, `C`: Contextually Near with Focus, `c`: Contextually Near
+8- `n` - Proximity - `n`: Not Applicable, `N`: Near Speaker and Listener, `S`: Near Speaker, `L`: Near Listener, `R`: Remote within Sight, `r`: Remote out of Sight, `T`: Temporally Near, `t`: Temporally Remote, `C`: Contextually Near with Focus, `c`: Contextually Near
 
 9- `K` - Future Expansion - `K`: Unspecified
 
